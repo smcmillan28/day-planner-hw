@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Work Day Scheduler</title>
+
+    <!-- Add link to jQuery library and Moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -22,9 +26,22 @@
     <div class="container">
         <!-- Timeblocks go here -->
     </div>
+    <script type="text/javascript">
+        // Document ready function
+        $(document).ready(function () {
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+            // Writing date to header
+            var current = moment();
+            var currentDay = current.format("MMMM D, YYYY");
+            $("#currentDay").text(currentDay);
+
+
+
+
+            
+        })
+
+    </script>
 </body>
 
 </html>
