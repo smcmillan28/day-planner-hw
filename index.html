@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Work Day Scheduler</title>
 
-    <!-- Add link to jQuery library and Moment.js-->
+    <!-- Add link to jQuery library and Moment.js and additional font awesome for labels-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://kit.fontawesome.com/25abcf2718.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -36,6 +37,7 @@
             $("#currentDay").text("Today's date is " + currentDay);
 
             // Create function that will write all nine rows to the page and add unique ID for each row/column
+            // Also places save icon on save button section
             function createRows() {
                 for (var i = 0; i < 9; i++) {
                     var newRow = $("<div>").addClass("row");
@@ -43,16 +45,36 @@
                     $(".container").append(newRow);
                     var timeBlock = $("<div>").addClass("col-md-2 time-block");
                     var todoInput = $("<div>").addClass("col-md-9 description");
-                    var saveButton = $("<div>").addClass("col-md-1 saveBtn");
+                    var saveButton = $("<button>").addClass("col-md-1 saveBtn");
+                    var scheduleForm = $("<form>");
+                    var scheduleText = $("<input>").addClass("input-group input-group-lg");
+                    scheduleText.attr("type", "text");
+                    scheduleForm.append(scheduleText);
+                    todoInput.append(scheduleForm);
+                    var buttonText = $("<i>").addClass("fas fa-save");
+                    saveButton.append(buttonText);
+                    scheduleForm.attr("id", "schedule" + i);
                     timeBlock.attr("id", "time" + i);
                     todoInput.attr("id", "input" + i);
                     saveButton.attr("id", "save" + i);
-                    newRow.append(timeBlock, todoInput, saveButton);
+                    newRow.append(timeBlock, todoInput, saveButton); 
                 }
             }
 
             // Calling create row function to bring rows to the page
             createRows();
+
+            // Setting text of row labels for each hour of the day
+            $("#time0").text("9:00 AM");
+            $("#time1").text("10:00 AM");
+            $("#time2").text("11:00 AM");
+            $("#time3").text("12:00 PM");
+            $("#time4").text("1:00 PM");
+            $("#time5").text("2:00 PM");
+            $("#time6").text("3:00 PM");
+            $("#time7").text("4:00 PM");
+            $("#time8").text("5:00 PM");
+
 
         })
 
