@@ -36,8 +36,11 @@
             var currentDay = current.format("MMMM D, YYYY");
             $("#currentDay").text("Today's date is " + currentDay);
 
-            // Create function that will write all nine rows to the page and add unique ID for each row/column
-            // Also places save icon on save button section
+            // Create function that accomplishes the following:
+            // Writes all nine rows to the page and add unique ID for each row/column
+            // Places save icon on save button section
+            // Appends form/input section to each middle description column with unique ID for each form
+            // -- Will be useful later on for click events saving text content to local storage
             function createRows() {
                 for (var i = 0; i < 9; i++) {
                     var newRow = $("<div>").addClass("row");
