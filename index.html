@@ -33,12 +33,27 @@
             // Writing date to header
             var current = moment();
             var currentDay = current.format("MMMM D, YYYY");
-            $("#currentDay").text(currentDay);
+            $("#currentDay").text("Today's date is " + currentDay);
 
+            // Create function that will write all nine rows to the page and add unique ID for each row/column
+            function createRows() {
+                for (var i = 0; i < 9; i++) {
+                    var newRow = $("<div>").addClass("row");
+                    newRow.attr("id", "row" + i);
+                    $(".container").append(newRow);
+                    var timeBlock = $("<div>").addClass("col-md-2 time-block");
+                    var todoInput = $("<div>").addClass("col-md-9 description");
+                    var saveButton = $("<div>").addClass("col-md-1 saveBtn");
+                    timeBlock.attr("id", "time" + i);
+                    todoInput.attr("id", "input" + i);
+                    saveButton.attr("id", "save" + i);
+                    newRow.append(timeBlock, todoInput, saveButton);
+                }
+            }
 
+            // Calling create row function to bring rows to the page
+            createRows();
 
-
-            
         })
 
     </script>
