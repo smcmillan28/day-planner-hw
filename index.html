@@ -60,7 +60,7 @@
                     timeBlock.attr("id", "time" + i);
                     todoInput.attr("id", "input" + i);
                     saveButton.attr("id", "save" + i);
-                    newRow.append(timeBlock, todoInput, saveButton); 
+                    newRow.append(timeBlock, todoInput, saveButton);
                 }
             }
 
@@ -78,7 +78,18 @@
             $("#time7").text("4:00 PM");
             $("#time8").text("5:00 PM");
 
+            // Creating functions that save to and render from local storage
+            function saveTasks() {
+                for (var i = 0; i < 9; i++) {
+                    $("#save" + i).click(function () {
+                        console.log("hello");
+                        var tasks = $(".description").value;
+                        localStorage.setItem("tasks", JSON.stringify(tasks));
+                    });
+                }
+            }
 
+            saveTasks();
         })
 
     </script>
