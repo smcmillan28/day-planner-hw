@@ -79,17 +79,63 @@
             $("#time8").text("5:00 PM");
 
             // Creating functions that save to and render from local storage
+
+            // var tasks = [];
+
+            // // This function is being called below and will run when the page loads.
+            // function init() {
+            //     // Get stored todos from localStorage
+            //     var storedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+            //     // If todos were retrieved from localStorage, update the todos array to it
+            //     if (storedTasks !== null) {
+            //         tasks = storedTasks;
+            //     }
+
+            //     // This is a helper function that will render todos to the DOM
+            //     // renderTasks();
+            // }
+
+            // function storeTasks() {
+            //     // Stringify and set key in localStorage to tasks array
+            //     localStorage.setItem("tasks", JSON.stringify(tasks));
+            // }
+
+            // // Add click event to each button that will save text input to local storage
+            // for (var i = 0; i < 9; i++) {
+            //     $("#save" + i).click(function () {
+            //         event.preventDefault();
+            //         console.log("hello");
+            //         var taskText = todoInput.value.trim();
+            //         if (todoText === "") {
+            //             return;
+            //         }
+            //         tasks.push(todoText);
+            //         localStorage.setItem("tasks", JSON.stringify(tasks));
+            //     });
+            //     storeTasks();
+            //     // renderTasks();
+            // }
+
+            // // Calls init to retrieve data and render it to the page on load
+            // init()
+
+
+
+
+
             function saveTasks() {
                 for (var i = 0; i < 9; i++) {
                     $("#save" + i).click(function () {
                         console.log("hello");
-                        var tasks = $(".description").value;
+                        var tasks = (".input-group").text;
                         localStorage.setItem("tasks", JSON.stringify(tasks));
                     });
                 }
             }
 
             saveTasks();
+
         })
 
     </script>
