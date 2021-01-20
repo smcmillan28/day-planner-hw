@@ -58,7 +58,7 @@
                     saveButton.append(buttonText);
                     scheduleForm.attr("id", "schedule" + i);
                     timeBlock.attr("id", "time" + i);
-                    todoInput.attr("id", "input" + i);
+                    scheduleText.attr("id", "input" + i);
                     saveButton.attr("id", "save" + i);
                     newRow.append(timeBlock, todoInput, saveButton);
                 }
@@ -78,63 +78,57 @@
             $("#time7").text("4:00 PM");
             $("#time8").text("5:00 PM");
 
+            // Function that assigns class to row based on current time
+
+
+
             // Creating functions that save to and render from local storage
 
-            // var tasks = [];
+            $("#save0").click(function () {
+                var newTask = $("#input0").val();
+                localStorage.setItem("0tasks", JSON.stringify(newTask));
+            })
 
-            // // This function is being called below and will run when the page loads.
-            // function init() {
-            //     // Get stored todos from localStorage
-            //     var storedTasks = JSON.parse(localStorage.getItem("tasks"));
+            $("#save1").click(function () {
+                var newTask = $("#input1").val();
+                localStorage.setItem("1tasks", JSON.stringify(newTask));
+            })
 
-            //     // If todos were retrieved from localStorage, update the todos array to it
-            //     if (storedTasks !== null) {
-            //         tasks = storedTasks;
-            //     }
+            $("#save2").click(function () {
+                var newTask = $("#input2").val();
+                localStorage.setItem("2tasks", JSON.stringify(newTask));
+            })
 
-            //     // This is a helper function that will render todos to the DOM
-            //     // renderTasks();
-            // }
+            $("#save3").click(function () {
+                var newTask = $("#input3").val();
+                localStorage.setItem("3tasks", JSON.stringify(newTask));
+            })
 
-            // function storeTasks() {
-            //     // Stringify and set key in localStorage to tasks array
-            //     localStorage.setItem("tasks", JSON.stringify(tasks));
-            // }
+            $("#save4").click(function () {
+                var newTask = $("#input4").val();
+                localStorage.setItem("4tasks", JSON.stringify(newTask));
+            })
 
-            // // Add click event to each button that will save text input to local storage
-            // for (var i = 0; i < 9; i++) {
-            //     $("#save" + i).click(function () {
-            //         event.preventDefault();
-            //         console.log("hello");
-            //         var taskText = todoInput.value.trim();
-            //         if (todoText === "") {
-            //             return;
-            //         }
-            //         tasks.push(todoText);
-            //         localStorage.setItem("tasks", JSON.stringify(tasks));
-            //     });
-            //     storeTasks();
-            //     // renderTasks();
-            // }
+            $("#save5").click(function () {
+                var newTask = $("#input5").val();
+                localStorage.setItem("5tasks", JSON.stringify(newTask));
+            })
 
-            // // Calls init to retrieve data and render it to the page on load
-            // init()
+            $("#save6").click(function () {
+                var newTask = $("#input6").val();
+                localStorage.setItem("6tasks", JSON.stringify(newTask));
+            })
 
+            $("#save7").click(function () {
+                var newTask = $("#input7").val();
+                localStorage.setItem("7tasks", JSON.stringify(newTask));
+            })
 
+            $("#save8").click(function () {
+                var newTask = $("#input8").val();
+                localStorage.setItem("8tasks", JSON.stringify(newTask));
+            })
 
-
-
-            function saveTasks() {
-                for (var i = 0; i < 9; i++) {
-                    $("#save" + i).click(function () {
-                        console.log("hello");
-                        var tasks = (".input-group").text;
-                        localStorage.setItem("tasks", JSON.stringify(tasks));
-                    });
-                }
-            }
-
-            saveTasks();
 
         })
 
