@@ -35,6 +35,9 @@
             var current = moment();
             var currentDay = current.format("MMMM D, YYYY");
             $("#currentDay").text("Today's date is " + currentDay);
+            
+            var currentTime = current.format("HH:mm");
+            console.log(currentTime);
 
             // Create function that accomplishes the following:
             // Writes all nine rows to the page and add unique ID for each row/column
@@ -68,17 +71,27 @@
             createRows();
 
             // Setting text of row labels for each hour of the day
-            $("#time0").text("9:00 AM");
-            $("#time1").text("10:00 AM");
-            $("#time2").text("11:00 AM");
-            $("#time3").text("12:00 PM");
-            $("#time4").text("1:00 PM");
-            $("#time5").text("2:00 PM");
-            $("#time6").text("3:00 PM");
-            $("#time7").text("4:00 PM");
-            $("#time8").text("5:00 PM");
+            var timeZero = moment("09:00", "HH:mm").format("HH:mm");
+            var timeOne = moment("10:00", "HH:mm").format("HH:mm");
+            var timeTwo = moment("11:00", "HH:mm").format("HH:mm");
+            var timeThree = moment("12:00", "HH:mm").format("HH:mm");
+            var timeFour = moment("13:00", "HH:mm").format("HH:mm");
+            var timeFive = moment("14:00", "HH:mm").format("HH:mm");
+            var timeSix = moment("15:00", "HH:mm").format("HH:mm");
+            var timeSeven = moment("16:00", "HH:mm").format("HH:mm");
+            var timeEight = moment("17:00", "HH:mm").format("HH:mm");
 
-            // Function that assigns class to row based on current time
+            $("#time0").text(timeZero);
+            $("#time1").text(timeOne);
+            $("#time2").text(timeTwo);
+            $("#time3").text(timeThree);
+            $("#time4").text(timeFour);
+            $("#time5").text(timeFive);
+            $("#time6").text(timeSix);
+            $("#time7").text(timeSeven);
+            $("#time8").text(timeEight);
+
+            // Function that assigns past/present/future class to row based on current time
 
 
 
