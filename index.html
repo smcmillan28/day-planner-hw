@@ -35,7 +35,15 @@
             var current = moment();
             var currentDay = current.format("MMMM D, YYYY");
             $("#currentDay").text("Today's date is " + currentDay);
-            
+
+            // Creating "CLEAR TASKS" button near top of page to get rid of local storage written to page
+            var clearTasks = $("<button>").addClass("btn btn-primary");
+            clearTasks.attr("type", "button");
+            clearTasks.attr("id", "clear-score");
+            clearTasks.text("Clear Tasks");
+            $(".jumbotron").append(clearTasks);
+
+            // Creating variable to store current time for class comparisons later
             var currentTime = current.format("HH:mm");
             console.log(currentTime);
 
@@ -59,6 +67,7 @@
                     todoInput.append(scheduleForm);
                     var buttonText = $("<i>").addClass("fas fa-save");
                     saveButton.append(buttonText);
+                    todoInput.attr("id", "todo" + i);
                     scheduleForm.attr("id", "schedule" + i);
                     timeBlock.attr("id", "time" + i);
                     scheduleText.attr("id", "input" + i);
@@ -167,6 +176,10 @@
 
             // Creating functions that save to and render from local storage
 
+            function renderTasks() {
+
+            }
+
             $("#save0").click(function () {
                 var newTask = $("#input0").val();
                 localStorage.setItem("0tasks", JSON.stringify(newTask));
@@ -212,6 +225,18 @@
                 localStorage.setItem("8tasks", JSON.stringify(newTask));
             })
 
+            // Creating 'CLEAR TASKS' function for button near top of page
+            // When clicked, tasks in the current schedule will be cleared
+            function clearTask() {
+                for (var i = 0; i < 9; i++) {
+                    localStorage.removeItem(i + "tasks");
+                    $("todo" + i).textContent = "";
+                }
+            }
+
+            clearTasks.click(function () {
+                clearTask();
+            });
 
         })
 

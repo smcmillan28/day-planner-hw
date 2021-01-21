@@ -67,6 +67,11 @@ textarea {
     background-color: #77dd77;
     color: white;
 }
+
+#clear-score {
+    background-color: #06AED5;
+    margin-top: 18px;
+}
   
 .saveBtn {
     border-left: 1px solid black;
