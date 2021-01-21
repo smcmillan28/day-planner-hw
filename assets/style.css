@@ -28,7 +28,8 @@ textarea {
 
 .input-group {
     border: 1px transparent;
-    height: 60px;
+    border-radius: 10px;
+    height: 30px;
 }
   
 .time-block {
