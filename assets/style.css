@@ -73,6 +73,10 @@ textarea {
     background-color: #06AED5;
     margin-top: 18px;
 }
+
+.task-list {
+    margin-top: 10px;
+}
   
 .saveBtn {
     border-left: 1px solid black;

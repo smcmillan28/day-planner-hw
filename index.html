@@ -62,15 +62,18 @@
                     var saveButton = $("<button>").addClass("col-md-1 saveBtn");
                     var scheduleForm = $("<form>");
                     var scheduleText = $("<input>").addClass("input-group input-group-lg");
+                    var taskList = $("<p>").addClass("task-list");
                     scheduleText.attr("type", "text");
                     scheduleForm.append(scheduleText);
                     todoInput.append(scheduleForm);
+                    todoInput.append(taskList);
                     var buttonText = $("<i>").addClass("fas fa-save");
                     saveButton.append(buttonText);
                     todoInput.attr("id", "todo" + i);
                     scheduleForm.attr("id", "schedule" + i);
                     timeBlock.attr("id", "time" + i);
                     scheduleText.attr("id", "input" + i);
+                    taskList.attr("id", "task" + i);
                     saveButton.attr("id", "save" + i);
                     newRow.append(timeBlock, todoInput, saveButton);
                 }
@@ -179,72 +182,63 @@
             $("#save0").click(function () {
                 var newTask = $("#input0").val();
                 localStorage.setItem("0tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule0").append(tasks);
+                $("#task0").text(newTask);
                 $("#input0").val("");
             })
 
             $("#save1").click(function () {
                 var newTask = $("#input1").val();
                 localStorage.setItem("1tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule1").append(tasks);
+                $("#task1").text(newTask);
                 $("#input1").val("");
             })
 
             $("#save2").click(function () {
                 var newTask = $("#input2").val();
                 localStorage.setItem("2tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule2").append(tasks);
+                $("#task2").text(newTask);
                 $("#input2").val("");
             })
 
             $("#save3").click(function () {
                 var newTask = $("#input3").val();
                 localStorage.setItem("3tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule3").append(tasks);
+                $("#task3").text(newTask);
                 $("#input3").val("");
             })
 
             $("#save4").click(function () {
                 var newTask = $("#input4").val();
                 localStorage.setItem("4tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule4").append(tasks);
+                $("#task4").text(newTask);
                 $("#input4").val("");
             })
 
             $("#save5").click(function () {
                 var newTask = $("#input5").val();
                 localStorage.setItem("5tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule5").append(tasks);
+                $("#task5").text(newTask);
                 $("#input5").val("");
             })
 
             $("#save6").click(function () {
                 var newTask = $("#input6").val();
                 localStorage.setItem("6tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule6").append(tasks);
+                $("#task6").text(newTask);
                 $("#input6").val("");
             })
 
             $("#save7").click(function () {
                 var newTask = $("#input7").val();
                 localStorage.setItem("7tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule7").append(tasks);
+                $("#task7").text(newTask);
                 $("#input7").val("");
             })
 
             $("#save8").click(function () {
                 var newTask = $("#input8").val();
                 localStorage.setItem("8tasks", JSON.stringify(newTask));
-                var tasks = $("<p>").text(newTask);
-                $("#schedule8").append(tasks);
+                $("#task8").text(newTask);
                 $("#input8").val("");
             })
 
