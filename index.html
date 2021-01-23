@@ -242,11 +242,27 @@
                 $("#input8").val("");
             })
 
+            // Rendering anything from local storage upon loading of the page.  
+
+            function renderStorage() {
+                for (var i = 0; i < 9; i++) {
+                    var prevTask = JSON.parse(localStorage.getItem(i + "tasks"));
+                    $("#task" + i).text(prevTask);
+                }
+            }
+
+            function init() {
+                renderStorage();
+            }
+
+            init();
+
             // Creating 'CLEAR TASKS' function for button near top of page
             // When clicked, tasks in the current schedule will be cleared
             function clearTask() {
                 for (var i = 0; i < 9; i++) {
                     localStorage.removeItem(i + "tasks");
+                    $("#task" + i).empty();
                 }
             }
 
